@@ -22,3 +22,6 @@ Route::get('controlpanel', function() {
                             ->nest('bootstrap', 'asset.html_config_common')
                             ->nest('footer', 'asset.footer');
         });
+
+
+Route::resource('users', 'UserController');
