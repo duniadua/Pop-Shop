@@ -40,7 +40,6 @@
 
             </div>
         </div>
-
     </body>
     <?php
     echo $footer;
