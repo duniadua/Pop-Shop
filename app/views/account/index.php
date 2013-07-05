@@ -30,7 +30,7 @@
                     );
 
                     echo Form::select('active', $active) . "</br>";
-                    echo Form::submit('Save', array('class' => 'btn btn-primary'));
+                    echo Form::submit('Save', array('class' => 'btn btn-inverse'));
                     echo Form::close();
                     echo $mssg;
                     ?>
