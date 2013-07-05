@@ -19,8 +19,8 @@
                     <li class="divider"></li>
                     <li><?php echo HTML::link('bank','Bank'); ?></li>
                     <li class="divider"></li>
-                    <li><?php echo HTML::link('payment','Payment Status'); ?></li>
-                    <li><?php echo HTML::link('payment','Payment Type'); ?></li>
+                    <li><?php echo HTML::link('status','Payment Status'); ?></li>
+                    <li><?php echo HTML::link('type','Payment Type'); ?></li>
                     <li class="divider"></li>
                     <li><?php echo HTML::link('product','Product'); ?></li>
                     <li><?php echo HTML::link('brand','Product Brand'); ?></li>
