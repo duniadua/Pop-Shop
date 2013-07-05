@@ -28,6 +28,7 @@
                     <li><?php echo HTML::link('category','Product Type'); ?></li>
                 </ul>
             </li>
+            <li class="divider-vertical"></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Report <b class="caret"></b></a>
                 <ul class="dropdown-menu">                           
@@ -36,6 +37,7 @@
                     <li><?php echo HTML::link('sales','Customer'); ?></li>                    
                 </ul>
             </li>
+            <li class="divider-vertical"></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Setting <b class="caret"></b></a>
                 <ul class="dropdown-menu">                           
@@ -43,6 +45,7 @@
                     <li><?php echo HTML::link('user','User'); ?></li>
                 </ul>
             </li>
+            <li class="divider-vertical"></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Utility <b class="caret"></b></a>
                 <ul class="dropdown-menu">                           
@@ -50,9 +53,9 @@
                     <li><?php echo HTML::link('restore','Restore DB'); ?></li>
                 </ul>
             </li>
-        </ul>
-        <ul class="nav">
             <li class="divider-vertical"></li>
+        </ul>
+        <ul class="nav">            
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Information <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -62,6 +65,7 @@
                     <li><?php echo HTML::link('logout','Logout'); ?></li>
                 </ul>
             </li>
+            <li class="divider-vertical"></li>
         </ul>
     </div>
 </div>
