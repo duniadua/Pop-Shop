@@ -25,3 +25,4 @@ Route::get('controlpanel', function() {
 
 
 Route::resource('users', 'UserController');
+Route::resource('customer', 'CustomerController');
