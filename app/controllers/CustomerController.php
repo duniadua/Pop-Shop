@@ -10,7 +10,7 @@ class CustomerController extends \BaseController {
     public function index() {
         //
         $data = array(
-            'title' => 'New Customer',
+            'title' => 'POP Shop - New Customer',
             'page_title' => 'Add Customer'
         );
         return View::make('customer.index', $data)
