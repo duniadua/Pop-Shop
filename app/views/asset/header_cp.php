@@ -14,11 +14,13 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Master <b class="caret"></b></a>
                 <ul class="dropdown-menu">                    
                     <li><?php echo HTML::link('customer','Customer'); ?></li>
+                    <li class="divider"></li>
                     <li><?php echo HTML::link('bank','Bank'); ?></li>
                     <li class="divider"></li>
                     <li><?php echo HTML::link('payment','Payment Status'); ?></li>
                     <li><?php echo HTML::link('payment','Payment Type'); ?></li>
                     <li class="divider"></li>
+                    <li><?php echo HTML::link('product','Product'); ?></li>
                     <li><?php echo HTML::link('brand','Product Brand'); ?></li>
                     <li><?php echo HTML::link('category','Product Category'); ?></li>
                     <li><?php echo HTML::link('category','Product Type'); ?></li>
@@ -35,7 +37,15 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Setting <b class="caret"></b></a>
                 <ul class="dropdown-menu">                           
-                    <li><?php echo HTML::link('account','Account'); ?></li>                    
+                    <li><?php echo HTML::link('store','Store'); ?></li>
+                    <li><?php echo HTML::link('user','User'); ?></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Utility <b class="caret"></b></a>
+                <ul class="dropdown-menu">                           
+                    <li><?php echo HTML::link('backup','Backup DB'); ?></li>
+                    <li><?php echo HTML::link('restore','Restore DB'); ?></li>
                 </ul>
             </li>
         </ul>
