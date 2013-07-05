@@ -13,6 +13,8 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Master <b class="caret"></b></a>
                 <ul class="dropdown-menu">                    
+                    <li><?php echo HTML::link('transaction','Manual Transaction'); ?></li>
+                    <li class="divider"></li>
                     <li><?php echo HTML::link('customer','Customer'); ?></li>
                     <li class="divider"></li>
                     <li><?php echo HTML::link('bank','Bank'); ?></li>
