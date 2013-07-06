@@ -58,8 +58,8 @@
                     echo Form::select('grup', $grup) . "</br>";
 
                     $active = array(
-                        'true' => 'active',
-                        'false' => 'inactive',
+                        1 => 'active',
+                        0 => 'inactive',
                     );
 
                     echo Form::select('active', $active) . "</br>";
