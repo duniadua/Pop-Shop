@@ -38,11 +38,11 @@ class StoreController extends \BaseController {
         try {
 
             $input = Input::all();
-
-            $table = new Store($input);
-            $table->save();
-
-            return Redirect::to('store')->with('mssg', '<div class=alert> ' . Input::get('name') . ' Added </div>');
+            $svcReturn = new StoreImpl();
+            
+            if ($svcReturn->insertStore($input)):
+                return Redirect::to('store')->with('mssg', '<div class=alert> ' . Input::get('name') . ' Added </div>');
+            endif;
         } catch (Exception $exc) {
             echo $exc->getMessage();
         }
