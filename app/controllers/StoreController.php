@@ -38,9 +38,9 @@ class StoreController extends \BaseController {
         try {
 
             $input = Input::all();
-            $svcReturn = new StoreImpl();
+            $storeImpl = new StoreImpl();
             
-            if ($svcReturn->insertStore($input)):
+            if ($storeImpl->insertStore($input)):
                 return Redirect::to('store')->with('mssg', '<div class=alert> ' . Input::get('name') . ' Added </div>');
             endif;
         } catch (Exception $exc) {
