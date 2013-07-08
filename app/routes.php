@@ -30,3 +30,4 @@ Route::resource('bank', 'BankController');
 Route::resource('status', 'StatusController');
 Route::resource('type', 'TypeController');
 Route::resource('store', 'StoreController');
+Route::resource('brand', 'BrandController');
