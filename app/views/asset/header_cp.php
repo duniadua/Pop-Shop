@@ -25,7 +25,7 @@
                     <li><?php echo HTML::link('product','Product'); ?></li>
                     <li><?php echo HTML::link('brand','Product Brand'); ?></li>
                     <li><?php echo HTML::link('category','Product Category'); ?></li>
-                    <li><?php echo HTML::link('category','Product Type'); ?></li>
+                    <li><?php echo HTML::link('product_type','Product Type'); ?></li>
                 </ul>
             </li>
             <li class="divider-vertical"></li>
