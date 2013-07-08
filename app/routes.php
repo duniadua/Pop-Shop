@@ -31,3 +31,4 @@ Route::resource('status', 'StatusController');
 Route::resource('type', 'TypeController');
 Route::resource('store', 'StoreController');
 Route::resource('brand', 'BrandController');
+Route::resource('product_type', 'ProductTypeController');
