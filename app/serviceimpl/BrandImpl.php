@@ -16,7 +16,12 @@ class BrandImpl implements BrandIface {
         $svcReturn = true;
 
         try {
-            $input = Input::all();
+             $input = array(
+                'name' => Input::get('name'),
+                'description' => Input::get('description'),                
+                'ip_address' => Request::getClientIp(),
+                'active' => Input::get('active'),
+            );
 
             $table = new Brand($input);
             $table->save();
