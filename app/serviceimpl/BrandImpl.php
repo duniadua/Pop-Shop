@@ -16,9 +16,9 @@ class BrandImpl implements BrandIface {
         $svcReturn = true;
 
         try {
-             $input = array(
+            $input = array(
                 'name' => Input::get('name'),
-                'description' => Input::get('description'),                
+                'description' => Input::get('description'),
                 'ip_address' => Request::getClientIp(),
                 'active' => Input::get('active'),
             );
@@ -29,6 +29,20 @@ class BrandImpl implements BrandIface {
             $svcReturn = false;
         }
         return $svcReturn;
+    }
+
+    public function listBrand() {
+
+        try {
+            $arrayBrand = DB::table('product_brand')
+                    ->lists('name', 'id');
+
+            if (count($arrayBrand) > 0):
+                return $arrayBrand;
+            endif;
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
     }
 
 }

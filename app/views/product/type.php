@@ -26,12 +26,12 @@ and open the template in the editor.
                     echo Form::label('description', 'Description');
                     echo Form::text('description') . "</br>";
                     echo Form::label('brand', 'Brand');
-                    $brand = array(
-                        1 => 'NIKE',
-                        0 => 'MILO',
-                    );
+//                    $brand = array(
+//                        1 => 'NIKE',
+//                        0 => 'MILO',
+//                    );
 
-                    echo Form::select('brand', $brand) . "</br>";
+                    echo Form::select('brand', $arraybrand) . "</br>";
                     
                     $active = array(
                         1 => 'active',

@@ -9,10 +9,14 @@ class ProductTypeController extends \BaseController {
      */
     public function index() {
         //
+        $listBrand = new BrandImpl();        
+        
         $data = array(
             'title' => 'POP Shop - Product Type',
-            'page_title' => 'Add Product Type'
+            'page_title' => 'Add Product Type',
+            'arraybrand' => $listBrand->listBrand(),
         );
+        
         return View::make('product.type', $data)
                         ->nest('header', 'asset.header_cp')
                         ->nest('bootstrap', 'asset.html_config_common')
