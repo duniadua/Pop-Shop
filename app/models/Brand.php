@@ -10,11 +10,11 @@
  *
  * @author sahid
  */
-class Brand extends Eloquent {
+class Brand extends Eloquent{
     //put your code here
-     protected $fillable = array(
+    protected $fillable = array(
         'name',
-        'description',             
+        'description',
         'ip_address',
         'active'
     );
