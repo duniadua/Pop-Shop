@@ -10,7 +10,8 @@
  *
  * @author sahid
  */
-class Brand extends Eloquent{
+class Brand extends Eloquent {
+
     //put your code here
     protected $fillable = array(
         'name',
@@ -25,4 +26,13 @@ class Brand extends Eloquent{
      * @var string
      */
     protected $table = 'product_brand';
+
+    public function getAllBrand() {
+
+        $QUERY = DB::table('product_brand')
+                ->lists('name', 'id');
+
+        return $QUERY;
+    }
+
 }

@@ -34,11 +34,11 @@ class BrandImpl implements BrandIface {
     public function listBrand() {
 
         try {
-            $arrayBrand = DB::table('product_brand')
-                    ->lists('name', 'id');
+            $brand = new Brand();
+            $listarray = $brand->getAllBrand();
 
-            if (count($arrayBrand) > 0):
-                return $arrayBrand;
+            if (count($listarray) > 0):
+                return $listarray;
             endif;
         } catch (Exception $exc) {
             echo $exc->getTraceAsString();

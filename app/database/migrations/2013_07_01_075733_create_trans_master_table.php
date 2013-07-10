@@ -30,6 +30,9 @@ class CreateTransMasterTable extends Migration {
                     // Total UOM
                     $table->integer('uom')->default(0);
                     $table->decimal('amount', 15, 2);
+                    // Total Shipping adalah berdasarkan kode kurir
+                    // yang didapat dari uom x jarak wilayah, 
+                    // jarak wilayah di dapat dari alamat customer
                     $table->decimal('shipping', 15, 2);
                     $table->decimal('total', 15, 2);
                     $table->string('ip_address', 20);                    

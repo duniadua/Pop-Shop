@@ -12,6 +12,7 @@ class CreateCurierTable extends Migration {
 	public function up()
 	{
 		//
+             
 	}
 
 	/**
@@ -22,6 +23,7 @@ class CreateCurierTable extends Migration {
 	public function down()
 	{
 		//
+            
 	}
 
 }
