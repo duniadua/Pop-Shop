@@ -26,7 +26,13 @@ class ProductCategory extends Eloquent {
      * @var string
      */
     protected $table = 'product_cat';
+    
+    public function getAllProductCategory() {
+
+        $QUERY = DB::table('product_cat')
+                ->lists('name', 'id');
+
+        return $QUERY;
+    }
 
 }
-
-?>

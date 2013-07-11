@@ -32,6 +32,15 @@ class ProductCategoryImpl implements ProductCategoryIface {
         return $svcReturn;
     }
 
+    public function listProductCat() {
+        $productCategory = new ProductCategory();
+        $listarray = $productCategory->getAllProductCategory();
+
+        if (count($listarray) > 0):
+            return $listarray;
+        endif;
+    }
+
 }
 
 ?>

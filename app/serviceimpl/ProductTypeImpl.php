@@ -34,6 +34,15 @@ class ProductTypeImpl implements ProductTypeIface {
         return $svcReturn;
     }
 
+    public function listProductType() {
+        $productType = new ProductType();
+        $listarray = $productType->getAllProductType();
+
+        if (count($listarray) > 0):
+            return $listarray;
+        endif;
+    }
+
 }
 
 ?>

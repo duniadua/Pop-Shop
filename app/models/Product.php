@@ -6,17 +6,28 @@
  */
 
 /**
- * Description of ProductType
+ * Description of Product
  *
  * @author sahid
  */
-class ProductType extends Eloquent {
+class Product extends Eloquent {
 
     //put your code here
     protected $fillable = array(
+        'code',
         'name',
         'description',
+        'category',
+        'url',
+        'image',
+        'notes',
+        'price',
+        'type',
+        'qty',
+        'uom',
         'brand',
+        'min_qty',
+        'sp',
         'ip_address',
         'active'
     );
@@ -26,14 +37,8 @@ class ProductType extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'product_type';
-    
-    public function getAllProductType() {
-
-        $QUERY = DB::table('product_type')
-                ->lists('name', 'id');
-
-        return $QUERY;
-    }
+    protected $table = 'product';
 
 }
+
+?>

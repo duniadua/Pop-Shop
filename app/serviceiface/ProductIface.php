@@ -9,8 +9,9 @@
  *
  * @author sahid
  */
-interface ProductTypeIface {
+interface ProductIface {
     //put your code here
-    public function insertProductType();
-    public function listProductType();
+    public function insertProduct();
 }
+
+?>
