@@ -17,6 +17,8 @@
                     <li class="divider"></li>
                     <li><?php echo HTML::link('customer','Customer'); ?></li>
                     <li class="divider"></li>
+                    <li><?php echo HTML::link('courier','Courier'); ?></li>
+                    <li class="divider"></li>
                     <li><?php echo HTML::link('bank','Bank'); ?></li>
                     <li class="divider"></li>
                     <li><?php echo HTML::link('status','Payment Status'); ?></li>
