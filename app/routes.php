@@ -33,3 +33,4 @@ Route::resource('store', 'StoreController');
 Route::resource('brand', 'BrandController');
 Route::resource('product_type', 'ProductTypeController');
 Route::resource('courier', 'CourierController');
+Route::resource('category', 'CategoryController');
