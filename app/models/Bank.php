@@ -11,11 +11,12 @@
  * @author sahid
  */
 class Bank extends Eloquent {
+
     //put your code here
-     protected $fillable = array(
+    protected $fillable = array(
         'name',
         'details',
-        'create_by',        
+        'create_by',
         'ip_address',
         'active'
     );
@@ -26,5 +27,13 @@ class Bank extends Eloquent {
      * @var string
      */
     protected $table = 'banks';
+
+    public function getAllBank() {
+
+        $QUERY = DB::table('banks')
+                ->lists('name', 'id');
+
+        return $QUERY;
+    }
 
 }
