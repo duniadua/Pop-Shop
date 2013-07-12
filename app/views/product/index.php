@@ -53,7 +53,7 @@ and open the template in the editor.
                     echo Form::label('min_qty', 'Minimum Qty');
                     echo Form::text('min_qty') . "</br>";
                     echo Form::label('sp', 'Special Point');
-                    echo Form::text('uom') . "</br>";
+                    echo Form::text('sp') . "</br>";
                     echo Form::label('brand', 'Brand');
 
                     echo Form::select('brand', $arraybrand) . "</br>";

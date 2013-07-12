@@ -18,7 +18,7 @@ class CreateProductTable extends Migration {
                     $table->string('code', 30);
                     $table->string('name', 62);
                     $table->string('description', 100);
-                    $table->string('category', 10);                    
+                    $table->integer('category', 10);                    
                     $table->string('url', 50);
                     $table->string('image', 50);
                     // deskripsi dari produk

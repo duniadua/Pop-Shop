@@ -20,6 +20,7 @@ class ProductImpl implements ProductIface {
             $input = array(
                 'code' => Input::get('code'),
                 'name' => Input::get('name'),
+                'description' => Input::get('description'),
                 'category' => Input::get('category'),
                 'url' => Input::get('url'),
                 'image' => Input::get('image'),
@@ -28,16 +29,16 @@ class ProductImpl implements ProductIface {
                 'type' => Input::get('type'),
                 'qty' => Input::get('qty'),
                 'uom' => Input::get('uom'),
+                'brand' => Input::get('brand'),
                 'min_qty' => Input::get('min_qty'),
-                'sp' => Input::get('sp'),
-                'description' => Input::get('description'),
+                'sp' => Input::get('sp'),                
                 'ip_address' => Request::getClientIp(),
                 'active' => Input::get('active'),
             );
 
             $table = new Product($input);
             $table->save();
-        } catch (Exception $exc) {
+        } catch (RuntimeException $exc) {
             $svcReturn = false;
         }
         return $svcReturn;

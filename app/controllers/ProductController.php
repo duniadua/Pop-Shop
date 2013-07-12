@@ -45,14 +45,17 @@ class ProductController extends \BaseController {
         //
         try {
 
-            $product = new ProductImpl();
+            $productImpl = new ProductImpl();
 
-            if ($product->insertProduct()):
+            if ($productImpl->insertProduct()):
                 return Redirect::to('product')->with('mssg', '<div class=alert> ' . Input::get('name') . ' Added </div>');
+            else:
+                throw new RuntimeException();
             endif;
-        } catch (Exception $exc) {
-            echo $exc->getTraceAsString();
+        } catch (RuntimeException $exc) {
+            echo $exc->getMessage();
         }
+
     }
 
     /**
