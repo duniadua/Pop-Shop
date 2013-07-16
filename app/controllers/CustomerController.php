@@ -36,32 +36,15 @@ class CustomerController extends \BaseController {
     public function store() {
         //
         try {
-                     
-            $data = array(
-                'code' => 'I',
-                'firstname' => Input::get('firstname'),
-                'lastname' => Input::get('lastname'),
-                'password' => Hash::make(Input::get('password')),
-                'email' => Input::get('email'),
-                'address' => Input::get('address'),
-                'address2' => Input::get('address2'),
-                'address3' => Input::get('address3'),
-                'postcode' => Input::get('postcode'),
-                'city' => Input::get('city'),
-                'province' => Input::get('province'),
-                'home_no' => Input::get('home_no'),
-                'mobile_no' => Input::get('mobile_no'),
-                'grup' => Input::get('grup'),
-                'ip_address' => Request::getClientIp(),
-                'active' => Input::get('active'),
-            );
 
-            $customer = new Customer($data);
-            $customer->save();
+            $customerImpl = new CustomerImpl();
 
-            return Redirect::to('customer')->with('mssg', '<div class=alert> ' . Input::get('firstname') . ' Added </div>');
-            
-        } catch (Exception $exc) {
+            if ($customerImpl->insertCustomer()):
+                return Redirect::to('customer')->with('mssg', '<div class=alert> ' . Input::get('firstname') . ' Added </div>');
+            else:
+                throw new RuntimeException("Return Error");
+            endif;
+        } catch (RuntimeException $exc) {
             echo $exc->getMessage();
         }
     }

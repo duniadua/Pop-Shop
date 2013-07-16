@@ -35,22 +35,16 @@ class BankController extends \BaseController {
      */
     public function store() {
         //
-         try {
-                     
-            $data = array(
-                'name' => Input::get('name'),
-                'details' => Input::get('details'),
-                'create_by' => 'I',
-                'ip_address' => Request::getClientIp(),
-                'active' => Input::get('active'),
-            );
+        try {
 
-            $bank = new Bank($data);
-            $bank->save();
+            $bankImpl = new BankImpl();
 
-            return Redirect::to('bank')->with('mssg', '<div class=alert> ' . Input::get('name') . ' Added </div>');
-            
-        } catch (Exception $exc) {
+            if ($bankImpl->insertBank()):
+                return Redirect::to('bank')->with('mssg', '<div class=alert> ' . Input::get('name') . ' Added </div>');
+            else:
+                throw new RuntimeException("Return Error");
+            endif;
+        } catch (RuntimeException $exc) {
             echo $exc->getMessage();
         }
     }
