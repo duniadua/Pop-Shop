@@ -6,5 +6,5 @@
  */
 ?>
 <div class="footer">
-    <p>K-Link Member <small>Admin Panel made 2013 - <?php echo date('Y')?></small></p>
+    <p>PoP Shop Admin Panel 2013 - <?php echo date('Y')?></p>
 </div>

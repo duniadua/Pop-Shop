@@ -11,7 +11,7 @@ class UserController extends \BaseController {
         //
         $data = array(
             'title' => 'New User',
-            'page_title' => 'Add User Account'
+            'page_title' => 'User Account'
         );
         return View::make('account.index', $data)
                         ->nest('header', 'asset.header_cp')
