@@ -37,19 +37,14 @@ class StatusController extends \BaseController {
         //
         try {
 
-            $data = array(
-                'name' => Input::get('name'),
-                'details' => Input::get('details'),
-                'create_by' => 'I',
-                'ip_address' => Request::getClientIp(),
-                'active' => Input::get('active'),
-            );
+            $statusImpl = new StatusImpl();
 
-            $status = new Status($data);
-            $status->save();
-
-            return Redirect::to('status')->with('mssg', '<div class=alert> ' . Input::get('name') . ' Added </div>');
-        } catch (Exception $exc) {
+            if ($statusImpl->insertStatus()):
+                return Redirect::to('status')->with('mssg', '<div class=alert> ' . Input::get('name') . ' Added </div>');
+            else:
+                throw new RuntimeException("Return Error");
+            endif;
+        } catch (RuntimeException $exc) {
             echo $exc->getMessage();
         }
     }

@@ -37,19 +37,14 @@ class TypeController extends \BaseController {
         //
         try {
 
-            $data = array(
-                'name' => Input::get('name'),
-                'details' => Input::get('details'),
-                'create_by' => 'I',
-                'ip_address' => Request::getClientIp(),
-                'active' => Input::get('active'),
-            );
+            $typeImpl = new TypeImpl();
 
-            $type = new Type($data);
-            $type->save();
-
-            return Redirect::to('type')->with('mssg', '<div class=alert> ' . Input::get('name') . ' Added </div>');
-        } catch (Exception $exc) {
+            if ($typeImpl->insertType()):
+                return Redirect::to('type')->with('mssg', '<div class=alert> ' . Input::get('name') . ' Added </div>');
+            else:
+                throw new RuntimeException("Return Error");
+            endif;
+        } catch (RuntimeException $exc) {
             echo $exc->getMessage();
         }
     }

@@ -36,21 +36,14 @@ class UserController extends \BaseController {
     public function store() {
         //
         try {
-            $data = array(
-                'username' => Input::get('username'),
-                'password' => Hash::make(Input::get('password')),
-                'email' => Input::get('email'),
-                'role' => 1,
-                'active' => Input::get('active'),
-            );
+            $userImpl = new UserImpl();
 
-            $users = new User($data);
-            $users->save();
-
-            return Redirect::to('users')->with('mssg', '<div class=alert> ' . Input::get('username') . ' Added </div>');
-        
-            
-        } catch (Exception $exc) {
+            if ($userImpl->insertUser()):
+                return Redirect::to('users')->with('mssg', '<div class=alert> ' . Input::get('username') . ' Added </div>');
+            else:
+                throw new RuntimeException("Return Error");
+            endif;
+        } catch (RuntimeException $exc) {
             echo $exc->getMessage();
         }
     }

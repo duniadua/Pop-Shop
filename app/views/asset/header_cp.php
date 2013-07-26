@@ -44,7 +44,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Setting <b class="caret"></b></a>
                 <ul class="dropdown-menu">                           
                     <li><?php echo HTML::link('store','Store'); ?></li>
-                    <li><?php echo HTML::link('user','User'); ?></li>
+                    <li><?php echo HTML::link('users','User'); ?></li>
                 </ul>
             </li>
             <li class="divider-vertical"></li>
