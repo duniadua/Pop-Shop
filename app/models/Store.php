@@ -34,6 +34,6 @@ class Store extends Eloquent {
      * @var string
      */
     protected $table = 'store';
-
+    
 }
 
