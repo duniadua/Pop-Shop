@@ -10,7 +10,8 @@
     </form>
 
     <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>Desktop </a>
-    <ul id="dashboard-menu" class="nav nav-list collapse in">        
+    <ul id="dashboard-menu" class="nav nav-list collapse in">
+        <li><?php echo HTML::link('desktop', 'Panel'); ?></li> 
         <li><?php echo HTML::link('transaction', 'Manual Transaction'); ?></li>                        
     </ul>
     

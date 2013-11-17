@@ -9,6 +9,8 @@ class CourierController extends \BaseController {
      */
     public function index() {
         //
+        Log::info('Courier In');
+        
         $data = array(
             'title' => 'POP Shop - New Courier',
             'page_title' => 'Add Courier'

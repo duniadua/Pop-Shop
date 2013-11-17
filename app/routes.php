@@ -15,12 +15,11 @@ Route::get('/', function() {
             return View::make('hello');
         });
 
-Route::get('controlpanel', function() {
+Route::get('desktop', function() {
 
-            return View::make('home.index')
-                            ->nest('header', 'asset.header_cp')
-                            ->nest('bootstrap', 'asset.html_config_common')
-                            ->nest('footer', 'asset.footer');
+            return View::make('asset.index')
+                            ->nest('bootstrap', 'asset.config_common')
+                            ->nest('menus', 'asset.menus');
         });
 
 
