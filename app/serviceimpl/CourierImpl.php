@@ -10,8 +10,8 @@
  *
  * @author sahid
  */
-class CourierImpl implements CourierIface{
-    
+class CourierImpl implements CourierIface {
+
     public function insertCourier() {
         $svcReturn = true;
 
@@ -30,8 +30,18 @@ class CourierImpl implements CourierIface{
             $svcReturn = false;
         }
         return $svcReturn;
-        
-    }    //put your code here
+    }
+
+    public function listAllCourier() {
+        $courier = new Courier();
+        $listCourier = $courier->getAll();
+
+        if (count($listCourier) > 0):
+            return $listCourier;
+        endif;
+    }
+
+//put your code here
 }
 
 ?>

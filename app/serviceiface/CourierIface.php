@@ -12,4 +12,5 @@
 interface CourierIface {
     //put your code here
     public function insertCourier();
+    public function listAllCourier();
 }

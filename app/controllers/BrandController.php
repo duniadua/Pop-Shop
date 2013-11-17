@@ -9,9 +9,13 @@ class BrandController extends \BaseController {
      */
     public function index() {
         //
+        $brand = new BrandImpl();
+        $arrayBrand = $brand->listBrand();
+        
         $data = array(
             'title' => 'POP Shop - Brand',
-            'page_title' => 'Add Brand name'
+            'page_title' => 'Add Brand name',
+            'arrayBrand' => $arrayBrand,
         );
         return View::make('brand.index2', $data)
                         ->nest('bootstrap', 'asset.config_common')

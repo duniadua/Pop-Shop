@@ -40,6 +40,7 @@ class BrandImpl implements BrandIface {
             if (count($listarray) > 0):
                 return $listarray;
             endif;
+            
         } catch (Exception $exc) {
             echo $exc->getTraceAsString();
         }

@@ -10,10 +10,13 @@ class CourierController extends \BaseController {
     public function index() {
         //
         Log::info('Courier In');
-        
+        $courier = new CourierImpl();
+        $listCourier = $courier->listAllCourier();
+                
         $data = array(
             'title' => 'POP Shop - New Courier',
-            'page_title' => 'Add Courier'
+            'page_title' => 'Add Courier',
+            'listCourier' => $listCourier,
         );
         return View::make('courier.index2', $data)
                         ->nest('bootstrap', 'asset.config_common')

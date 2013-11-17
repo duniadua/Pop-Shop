@@ -28,6 +28,10 @@ class Courier extends Eloquent{
      * @var string
      */
     protected $table = 'courier';
+    
+    public function getAll(){
+        return $courier = DB::table('courier')->get();
+    }
 
 }
 

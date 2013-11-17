@@ -29,8 +29,8 @@ class Brand extends Eloquent {
 
     public function getAllBrand() {
 
-        $QUERY = DB::table('product_brand')
-                ->lists('name', 'id');
+        $QUERY = DB::table('product_brand')                
+                ->get();
 
         return $QUERY;
     }
