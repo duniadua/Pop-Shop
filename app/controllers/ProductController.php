@@ -21,10 +21,9 @@ class ProductController extends \BaseController {
             'arrayProductType' => $listProductType->listProductType(),
         );
 
-        return View::make('product.index', $data)
-                        ->nest('header', 'asset.header_cp')
-                        ->nest('bootstrap', 'asset.html_config_common')
-                        ->nest('footer', 'asset.footer');
+        return View::make('product.index2', $data)
+                        ->nest('bootstrap', 'asset.config_common')
+                        ->nest('menus','asset.menus');
     }
 
     /**

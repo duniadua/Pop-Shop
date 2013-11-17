@@ -13,10 +13,10 @@ class UserController extends \BaseController {
             'title' => 'New User',
             'page_title' => 'User Account'
         );
-        return View::make('account.index', $data)
-                        ->nest('header', 'asset.header_cp')
-                        ->nest('bootstrap', 'asset.html_config_common')
-                        ->nest('footer', 'asset.footer');
+
+        return View::make('account.index2', $data)
+                        ->nest('bootstrap', 'asset.config_common')
+                        ->nest('menus','asset.menus');
     }
 
     /**

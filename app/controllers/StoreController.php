@@ -13,10 +13,9 @@ class StoreController extends \BaseController {
             'title' => 'POP Shop - Store Setting',
             'page_title' => 'Add your store name'
         );
-        return View::make('store.index', $data)
-                        ->nest('header', 'asset.header_cp')
-                        ->nest('bootstrap', 'asset.html_config_common')
-                        ->nest('footer', 'asset.footer');
+        return View::make('store.index2', $data)
+                        ->nest('bootstrap', 'asset.config_common')
+                        ->nest('menus','asset.menus');
     }
 
     /**

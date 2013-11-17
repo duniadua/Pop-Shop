@@ -17,10 +17,9 @@ class ProductTypeController extends \BaseController {
             'arraybrand' => $listBrand->listBrand(),
         );
         
-        return View::make('product.type', $data)
-                        ->nest('header', 'asset.header_cp')
-                        ->nest('bootstrap', 'asset.html_config_common')
-                        ->nest('footer', 'asset.footer');
+        return View::make('product.type2', $data)
+                        ->nest('bootstrap', 'asset.config_common')
+                        ->nest('menus','asset.menus');
     }
 
     /**

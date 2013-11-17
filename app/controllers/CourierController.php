@@ -13,10 +13,9 @@ class CourierController extends \BaseController {
             'title' => 'POP Shop - New Courier',
             'page_title' => 'Add Courier'
         );
-        return View::make('courier.index', $data)
-                        ->nest('header', 'asset.header_cp')
-                        ->nest('bootstrap', 'asset.html_config_common')
-                        ->nest('footer', 'asset.footer');
+        return View::make('courier.index2', $data)
+                        ->nest('bootstrap', 'asset.config_common')
+                        ->nest('menus','asset.menus');
     }
 
     /**

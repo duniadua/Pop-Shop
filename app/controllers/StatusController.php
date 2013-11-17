@@ -13,10 +13,9 @@ class StatusController extends \BaseController {
             'title' => 'POP Shop - New Payment Status',
             'page_title' => 'Add Payment Status'
         );
-        return View::make('status.index', $data)
-                        ->nest('header', 'asset.header_cp')
-                        ->nest('bootstrap', 'asset.html_config_common')
-                        ->nest('footer', 'asset.footer');
+        return View::make('status.index2', $data)
+                        ->nest('bootstrap', 'asset.config_common')
+                        ->nest('menus','asset.menus');
     }
 
     /**

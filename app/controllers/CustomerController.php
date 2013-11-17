@@ -13,10 +13,9 @@ class CustomerController extends \BaseController {
             'title' => 'POP Shop - New Customer',
             'page_title' => 'Add Customer'
         );
-        return View::make('customer.index', $data)
-                        ->nest('header', 'asset.header_cp')
-                        ->nest('bootstrap', 'asset.html_config_common')
-                        ->nest('footer', 'asset.footer');
+        return View::make('customer.index2', $data)
+                        ->nest('bootstrap', 'asset.config_common')
+                        ->nest('menus','asset.menus');
     }
 
     /**

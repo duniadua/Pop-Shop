@@ -13,10 +13,9 @@ class TypeController extends \BaseController {
             'title' => 'POP Shop - New Payment Type',
             'page_title' => 'Add Payment Type'
         );
-        return View::make('type.index', $data)
-                        ->nest('header', 'asset.header_cp')
-                        ->nest('bootstrap', 'asset.html_config_common')
-                        ->nest('footer', 'asset.footer');
+        return View::make('type.index2', $data)
+                        ->nest('bootstrap', 'asset.config_common')
+                        ->nest('menus','asset.menus');
     }
 
     /**

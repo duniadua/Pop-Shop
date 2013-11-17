@@ -13,10 +13,9 @@ class BankController extends \BaseController {
             'title' => 'POP Shop - New Bank',
             'page_title' => 'Add Bank Account'
         );
-        return View::make('bank.index', $data)
-                        ->nest('header', 'asset.header_cp')
-                        ->nest('bootstrap', 'asset.html_config_common')
-                        ->nest('footer', 'asset.footer');
+        return View::make('bank.index2', $data)
+                        ->nest('bootstrap', 'asset.config_common')
+                        ->nest('menus','asset.menus');
     }
 
     /**

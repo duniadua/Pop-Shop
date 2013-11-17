@@ -13,10 +13,9 @@ class CategoryController extends \BaseController {
             'title' => 'POP Shop - Product Category',
             'page_title' => 'Add Product Category'
         );
-        return View::make('product.category', $data)
-                        ->nest('header', 'asset.header_cp')
-                        ->nest('bootstrap', 'asset.html_config_common')
-                        ->nest('footer', 'asset.footer');
+        return View::make('product.category2', $data)
+                        ->nest('bootstrap', 'asset.config_common')
+                        ->nest('menus','asset.menus');
     }
 
     /**

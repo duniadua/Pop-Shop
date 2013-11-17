@@ -11,7 +11,7 @@
         ?>
     </head>
     <body>
-        <div class="container well">
+        <div class="container box">
             <div class="span5">
                 <fieldset>
                     <legend><?php echo $page_title ?></legend>
@@ -30,12 +30,12 @@
                     ?>
                 </fieldset>
             </div>
-            <div class="span5">
-                <legend>-</legend>
+            <div class="span5">                
                 <fieldset>
                     <?php
+                    
                     echo Form::label('postcode', 'Postcode');
-                    echo Form::text('postcode') . "</br>";
+                    echo Form::text('postcode','',array('class' => 'input-small')) . "</br>";
                     echo Form::label('city', 'City');
                     echo Form::text('city') . "</br>";
                     echo Form::label('province', 'Province');
