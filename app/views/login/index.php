@@ -59,24 +59,27 @@
                 <ul class="nav pull-right">
 
                 </ul>
-                <a class="brand" href="index.html"><span class="first"><?php  echo $store->name; ?></span></a>
+                <a class="brand" href="index.html"><span class="first"><?php echo $store->name; ?></span></a>
             </div>
         </div>
 
         <div class="row-fluid">
             <div class="dialog">
                 <div class="block">
-                    <p class="block-heading">Sign In</p>
+                    <p class="block-heading"><i class="icon-lock"></i> Sign In</p>
                     <div class="block-body">
-                        <form>
-                            <label>Username</label>
-                            <input type="text" class="span12">
-                            <label>Password</label>
-                            <input type="password" class="span12">
-                            <a href="index.html" class="btn btn-primary pull-right">Sign In</a>
-                            <label class="remember-me"><input type="checkbox"> Remember me</label>                            
-                            <div class="clearfix"></div>
-                        </form>
+                        <?php echo Form::open(array('action' => 'LoginController@cekLogin')); ?>
+                        <label>Username</label>
+                        <?php echo Form::text('username'); ?>
+                        <label>Password</label>
+                        <?php echo Form::text('password'); ?>
+                        <br>
+                        <?php
+                        echo Form::submit('Sign in', array('class' => 'btn btn-inverse'));
+                        echo Form::close();                        
+                        ?>                        
+                        <label class="remember-me"><input type="checkbox"> Remember me</label>                            
+                        <div class="clearfix"></div>                        
                     </div>
                 </div>                
                 <p><a href="reset-password.html">Forgot your password?</a></p>                
