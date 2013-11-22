@@ -72,7 +72,7 @@
                         <label>Username</label>
                         <?php echo Form::text('username'); ?>
                         <label>Password</label>
-                        <?php echo Form::text('password'); ?>
+                        <?php echo Form::password('password'); ?>
                         <br>
                         <?php
                         echo Form::submit('Sign in', array('class' => 'btn btn-inverse'));

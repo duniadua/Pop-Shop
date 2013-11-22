@@ -14,7 +14,7 @@ class LoginImpl implements LoginIface {
 
     //put your code here
     public function getAuthentification($username, $password) {
-        $loginReturn = true;
+        $loginReturn = false;
 
         try {
 
@@ -22,9 +22,11 @@ class LoginImpl implements LoginIface {
                     ->where('username', $username)
                     ->where('password', $password)
                     ->first();
+            
+            echo $login;
 
-            if (count($login) <= 0):
-                $loginReturn = false;
+            if (count($login) == 1):
+                $loginReturn = true;
             endif;
             
         } catch (Exception $exc) {

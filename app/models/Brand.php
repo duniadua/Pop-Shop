@@ -29,7 +29,8 @@ class Brand extends Eloquent {
 
     public function getAllBrand() {
 
-        $QUERY = DB::table('product_brand')                
+        $QUERY = DB::table('product_brand')
+                ->orderBy('created_at','desc')
                 ->get();
 
         return $QUERY;

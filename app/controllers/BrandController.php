@@ -44,10 +44,12 @@ class BrandController extends \BaseController {
             
             if($brandImpl->insertBrand()):
                 return Redirect::to('brand')->with('mssg', '<div class=alert> ' . Input::get('name') . ' Added </div>');
+            else:
+                throw new Exception("Insert Failed");
             endif;
             
         } catch (Exception $exc) {
-            echo $exc->getTraceAsString();
+            echo $exc->getMessage();
         }
     }
 

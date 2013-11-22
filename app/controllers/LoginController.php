@@ -10,13 +10,13 @@ class LoginController extends \BaseController {
     public function index() {
         //        
         $store = Store::find(1);
-        
+
         $data = array(
             'title' => 'Please Verify Your Self',
             'page_title' => 'Login Box',
             'store' => $store
         );
-        
+
         return View::make('login.index', $data)
                         ->nest('bootstrap', 'asset.config_common');
     }
@@ -77,6 +77,19 @@ class LoginController extends \BaseController {
      */
     public function destroy($id) {
         //
+    }
+
+    public function cekLogin() {
+        try {
+
+            if (Auth::attempt(array('username' => Input::get('username'), 'password' => Input::get('password')))) :
+                return Redirect::to('desktop');
+            else:
+                   return Redirect::to('login')->with('mssg', "<div class='alert alert-error'>Login failed, please check again username & password</div>");
+            endif;
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
     }
 
 }

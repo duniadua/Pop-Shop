@@ -128,9 +128,9 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                            <th>Create Date</th>
                                             <th style="width: 26px;"></th>
                                         </tr>
                                     </thead>

@@ -39,10 +39,12 @@ class BrandImpl implements BrandIface {
 
             if (count($listarray) > 0):
                 return $listarray;
+            else:
+                throw new Exception("Empty Result Data");
             endif;
             
         } catch (Exception $exc) {
-            echo $exc->getTraceAsString();
+            echo $exc->getMessage();
         }
     }
 
