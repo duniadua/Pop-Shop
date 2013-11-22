@@ -85,7 +85,7 @@ class LoginController extends \BaseController {
             if (Auth::attempt(array('username' => Input::get('username'), 'password' => Input::get('password')))) :
                 return Redirect::to('desktop');
             else:
-                   return Redirect::to('login')->with('mssg', "<div class='alert alert-error'>Login failed, please check again username & password</div>");
+                return Redirect::to('login')->with('mssg', "<div class='alert alert-error'>Login failed, please check again username & password</div>");
             endif;
         } catch (Exception $exc) {
             echo $exc->getTraceAsString();
