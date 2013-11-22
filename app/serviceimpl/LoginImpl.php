@@ -23,7 +23,7 @@ class LoginImpl implements LoginIface {
                     ->where('password', $password)
                     ->first();
 
-            if (count($login) == 0):
+            if (count($login) <= 0):
                 $loginReturn = false;
             endif;
             

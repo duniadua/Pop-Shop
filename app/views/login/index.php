@@ -76,7 +76,8 @@
                         <br>
                         <?php
                         echo Form::submit('Sign in', array('class' => 'btn btn-inverse'));
-                        echo Form::close();                        
+                        echo Form::close();
+                        echo $mssg = Session::get('mssg');
                         ?>                        
                         <label class="remember-me"><input type="checkbox"> Remember me</label>                            
                         <div class="clearfix"></div>                        
