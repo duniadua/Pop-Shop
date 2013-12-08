@@ -10,7 +10,7 @@ class BrandController extends \BaseController {
     public function index() {
         //
         $brand = new BrandImpl();
-        $arrayBrand = $brand->listBrand();
+        $arrayBrand = $brand->listAllBrand();
         
         $data = array(
             'title' => 'POP Shop - Brand',

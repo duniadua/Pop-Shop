@@ -33,12 +33,38 @@ class ProductCategoryImpl implements ProductCategoryIface {
     }
 
     public function listProductCat() {
-        $productCategory = new ProductCategory();
-        $listarray = $productCategory->getAllProductCategory();
+        try {
+            $productCategory = new ProductCategory();
+            $listarray = $productCategory->getAllProductCategory();
 
-        if (count($listarray) > 0):
-            return $listarray;
-        endif;
+            if (count($listarray) > 0):
+
+                foreach ($listarray as $rows) {
+                    $arrayProduct[$rows->name] = $rows->description;
+                }
+
+                return $arrayProduct;
+            else:
+                throw new Exception('Category list is empty');
+            endif;
+        } catch (Exception $exc) {
+            echo $exc->getMessage();
+        }
+    }
+
+    public function listAllProductCat() {
+        try {
+            $productCategory = new ProductCategory();
+            $listarray = $productCategory->getAllProductCategory();
+
+            if (count($listarray) > 0):            
+                return $listarray;
+            else:
+                throw new Exception('Category list is empty');
+            endif;
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
     }
 
 }

@@ -113,14 +113,14 @@
                                         echo Form::label('description', 'Description');
                                         echo Form::text('description') . "</br>";
                                         echo Form::label('category', 'Category');
-                                        echo Form::select('category', $arrayProductCategory) . "</br>";
+                                        echo Form::select('category', $productCategory) . "</br>";
+//                                        var_dump($productType);
                                         echo Form::label('type', 'Type');
-                                        echo Form::select('type', $arrayProductType) . "</br>";
+                                        echo Form::select('type', $productType) . "</br>";
                                         echo Form::label('url', 'Url');
                                         echo Form::text('url') . "</br>";
                                         echo Form::label('image', 'Image');
                                         echo Form::text('image') . "</br>";
-                                                                               
                                         ?>
                                     </fieldset>
                                 </div>
@@ -141,7 +141,7 @@
                                         echo Form::text('sp') . "</br>";
                                         echo Form::label('brand', 'Brand');
 
-                                        echo Form::select('brand', $arraybrand) . "</br>";
+                                        echo Form::select('brand', $brand) . "</br>";
 
                                         $active = array(
                                             1 => 'active',

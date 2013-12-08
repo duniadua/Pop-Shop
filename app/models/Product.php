@@ -38,6 +38,10 @@ class Product extends Eloquent {
      * @var string
      */
     protected $table = 'product';
+    
+    public function getAll(){
+        return $product = DB::table('product')->get();
+    }
 
 }
 

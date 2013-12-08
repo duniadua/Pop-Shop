@@ -28,11 +28,7 @@ class ProductCategory extends Eloquent {
     protected $table = 'product_cat';
     
     public function getAllProductCategory() {
-
-        $QUERY = DB::table('product_cat')
-                ->lists('name', 'id');
-
-        return $QUERY;
+        return $courier = DB::table('product_cat')->get();
     }
 
 }

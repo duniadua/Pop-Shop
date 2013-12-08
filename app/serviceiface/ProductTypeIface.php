@@ -13,4 +13,5 @@ interface ProductTypeIface {
     //put your code here
     public function insertProductType();
     public function listProductType();
+    public function listAllProductType();
 }

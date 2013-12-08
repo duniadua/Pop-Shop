@@ -9,21 +9,26 @@ class ProductController extends \BaseController {
      */
     public function index() {
         //
-        $listBrand = new BrandImpl();
-        $listProductCategory = new ProductCategoryImpl();
-        $listProductType = new ProductTypeImpl();
+        $brandImpl = new BrandImpl();
+        $listBrandImpl = $brandImpl->listBrand();
+        
+        $productTypeImpl = new ProductTypeImpl();
+        $listProductType = $productTypeImpl->listProductType();
+
+        $productCategoryImpl = new ProductCategoryImpl();
+        $listProductCategory = $productCategoryImpl->listProductCat();
 
         $data = array(
             'title' => 'POP Shop - Product',
             'page_title' => 'Add Product',
-            'arraybrand' => $listBrand->listBrand(),
-            'arrayProductCategory' => $listProductCategory->listProductCat(),
-            'arrayProductType' => $listProductType->listProductType(),
+            'brand' => $listBrandImpl,
+            'productCategory' => $listProductCategory,
+            'productType' => $listProductType,
         );
 
         return View::make('product.index2', $data)
                         ->nest('bootstrap', 'asset.config_common')
-                        ->nest('menus','asset.menus');
+                        ->nest('menus', 'asset.menus');
     }
 
     /**
@@ -49,12 +54,11 @@ class ProductController extends \BaseController {
             if ($productImpl->insertProduct()):
                 return Redirect::to('product')->with('mssg', '<div class=alert> ' . Input::get('name') . ' Added </div>');
             else:
-                throw new RuntimeException();
+                throw new Exception('Cannot Insert to table');
             endif;
         } catch (RuntimeException $exc) {
             echo $exc->getMessage();
         }
-
     }
 
     /**

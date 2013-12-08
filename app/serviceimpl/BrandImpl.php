@@ -38,13 +38,32 @@ class BrandImpl implements BrandIface {
             $listarray = $brand->getAllBrand();
 
             if (count($listarray) > 0):
+
+                foreach ($listarray as $rows) {
+                    $arrayBrand[$rows->name] = $rows->description;
+                }
+
+                return $arrayBrand;
+            else:
+                throw new Exception("Empty Result Data");
+            endif;
+        } catch (Exception $exc) {
+            echo $exc->getMessage();
+        }
+    }
+
+    public function listAllBrand() {
+        try {
+            $brand = new Brand();
+            $listarray = $brand->getAllBrand();
+
+            if (count($listarray) > 0):
                 return $listarray;
             else:
                 throw new Exception("Empty Result Data");
             endif;
-            
         } catch (Exception $exc) {
-            echo $exc->getMessage();
+            echo $exc->getTraceAsString();
         }
     }
 

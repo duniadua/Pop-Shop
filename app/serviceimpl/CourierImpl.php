@@ -33,12 +33,21 @@ class CourierImpl implements CourierIface {
     }
 
     public function listAllCourier() {
-        $courier = new Courier();
-        $listCourier = $courier->getAll();
+        try {
+            $courier = new Courier();
+            $listCourier = $courier->getAll();
 
-        if (count($listCourier) > 0):
-            return $listCourier;
-        endif;
+            if (count($listCourier) > 0):
+                $listCourier;
+            else:
+                throw new Exception('No record Found');
+            endif;
+            
+        } catch (Exception $exc) {
+            echo $exc->getMessage();
+        }
+        
+        return $listCourier;
     }
 
 //put your code here

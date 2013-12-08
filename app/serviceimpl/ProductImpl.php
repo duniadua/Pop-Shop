@@ -31,7 +31,7 @@ class ProductImpl implements ProductIface {
                 'uom' => Input::get('uom'),
                 'brand' => Input::get('brand'),
                 'min_qty' => Input::get('min_qty'),
-                'sp' => Input::get('sp'),                
+                'sp' => Input::get('sp'),
                 'ip_address' => Request::getClientIp(),
                 'active' => Input::get('active'),
             );
@@ -42,6 +42,15 @@ class ProductImpl implements ProductIface {
             $svcReturn = false;
         }
         return $svcReturn;
+    }
+
+    public function listProduct() {
+        $product = new Product();
+        $listProduct = $product->getAll();
+
+        if (count($listProduct) > 0):
+            return $listProduct;
+        endif;
     }
 
 }

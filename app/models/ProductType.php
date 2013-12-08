@@ -31,7 +31,7 @@ class ProductType extends Eloquent {
     public function getAllProductType() {
 
         $QUERY = DB::table('product_type')
-                ->lists('name', 'id');
+                ->get();
 
         return $QUERY;
     }

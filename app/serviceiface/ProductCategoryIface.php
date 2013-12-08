@@ -13,4 +13,5 @@ interface ProductCategoryIface {
     //put your code here
     public function insertProductCat();
     public function listProductCat();
+    public function listAllProductCat();
 }

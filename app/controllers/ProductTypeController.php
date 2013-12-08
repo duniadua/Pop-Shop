@@ -9,12 +9,14 @@ class ProductTypeController extends \BaseController {
      */
     public function index() {
         //
-        $listBrand = new BrandImpl();        
+        $listBrand = new BrandImpl();
+        $productTypeImpl = new ProductTypeImpl();        
         
         $data = array(
             'title' => 'POP Shop - Product Type',
             'page_title' => 'Add Product Type',
             'arraybrand' => $listBrand->listBrand(),
+            'arrayType' => $productTypeImpl->listAllProductType(),
         );
         
         return View::make('product.type2', $data)

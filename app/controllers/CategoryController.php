@@ -9,9 +9,14 @@ class CategoryController extends \BaseController {
      */
     public function index() {
         //
+        Log::info('category in');
+        $productCategoryImpl = new ProductCategoryImpl();
+        $listCategory = $productCategoryImpl->listAllProductCat();
+        
         $data = array(
             'title' => 'POP Shop - Product Category',
-            'page_title' => 'Add Product Category'
+            'page_title' => 'Add Product Category',
+            'listCategory' => $listCategory,
         );
         return View::make('product.category2', $data)
                         ->nest('bootstrap', 'asset.config_common')

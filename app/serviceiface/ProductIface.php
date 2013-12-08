@@ -12,6 +12,7 @@
 interface ProductIface {
     //put your code here
     public function insertProduct();
+    public function listProduct();
 }
 
 ?>

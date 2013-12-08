@@ -13,6 +13,7 @@ interface BrandIface {
     //put your code here
     public function insertBrand();
     public function listBrand();
+    public function listAllBrand();
 }
 
 ?>
