@@ -12,6 +12,7 @@
 interface TypeIface {
     //put your code here
     public function insertType();
+    public function listPaymentType();
 }
 
 ?>

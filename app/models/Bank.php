@@ -31,7 +31,7 @@ class Bank extends Eloquent {
     public function getAllBank() {
 
         $QUERY = DB::table('banks')
-                ->lists('name', 'id');
+                ->get();
 
         return $QUERY;
     }

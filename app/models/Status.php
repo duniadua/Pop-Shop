@@ -9,13 +9,15 @@
  * Description of Status
  *
  * @author sahid
+ * 
  */
 class Status extends Eloquent {
+
     //put your code here
     protected $fillable = array(
         'name',
         'details',
-        'create_by',        
+        'create_by',
         'ip_address',
         'active'
     );
@@ -26,5 +28,11 @@ class Status extends Eloquent {
      * @var string
      */
     protected $table = 'payment_status';
+
+    public function getAllStatus() {
+
+        return $QUERY = DB::table('payment_status')
+                ->get();
+    }
 
 }

@@ -26,4 +26,9 @@ class Type extends Eloquent {
      * @var string
      */
     protected $table = 'payment_type';
+    
+    public function getAllPaymentType(){
+        return $QUERY = DB::table('payment_type')
+                ->get();
+    }
 }

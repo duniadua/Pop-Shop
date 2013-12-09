@@ -12,4 +12,5 @@
 interface StatusIface {
     //put your code here
     public function insertStatus();
+    public function listAllStatus();
 }

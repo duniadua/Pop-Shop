@@ -11,7 +11,8 @@
  */
 interface BankIface {
     //put your code here
-    public function insertBank();    
+    public function insertBank();
+    public function listAllBank();
 }
 
 ?>

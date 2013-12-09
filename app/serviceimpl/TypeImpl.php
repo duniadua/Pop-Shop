@@ -29,11 +29,25 @@ class TypeImpl implements TypeIface{
             $type->save();
             
         } catch (RuntimeException $exc) {
-            $svcReturn = false;
-            echo $exc->getTraceAsString();
+            $svcReturn = false;            
         }
         
         return $svcReturn;
+    }
+
+    public function listPaymentType() {
+        try {
+            $paymentType = new Type();
+            $listArray = $paymentType->getAllPaymentType();
+            
+            if (count($listArray) > 0):
+                return $listArray;
+            else:
+                throw new Exception("Empty Result Data");
+            endif;
+        } catch (Exception $exc) {
+            echo $exc->getMessage();
+        }
     }    
 }
 

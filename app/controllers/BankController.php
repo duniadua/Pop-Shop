@@ -8,11 +8,16 @@ class BankController extends \BaseController {
      * @return Response
      */
     public function index() {
-        //
+        
+        $bankImpl = new BankImpl();
+        $listBankImpl = $bankImpl->listAllBank();
+        
         $data = array(
             'title' => 'POP Shop - New Bank',
-            'page_title' => 'Add Bank Account'
+            'page_title' => 'Add Bank Account',
+            'listBank' => $listBankImpl,
         );
+        
         return View::make('bank.index2', $data)
                         ->nest('bootstrap', 'asset.config_common')
                         ->nest('menus','asset.menus');

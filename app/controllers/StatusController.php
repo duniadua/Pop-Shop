@@ -9,10 +9,15 @@ class StatusController extends \BaseController {
      */
     public function index() {
         //
+        $status = new StatusImpl();
+        $listStatus = $status->listAllStatus();
+        
         $data = array(
             'title' => 'POP Shop - New Payment Status',
-            'page_title' => 'Add Payment Status'
+            'page_title' => 'Add Payment Status',
+            'listStatus' => $listStatus,
         );
+        
         return View::make('status.index2', $data)
                         ->nest('bootstrap', 'asset.config_common')
                         ->nest('menus','asset.menus');

@@ -9,9 +9,13 @@ class TypeController extends \BaseController {
      */
     public function index() {
         //
+        $paymentType = new TypeImpl();
+        $listPaymentType = $paymentType->listPaymentType();
+        
         $data = array(
             'title' => 'POP Shop - New Payment Type',
-            'page_title' => 'Add Payment Type'
+            'page_title' => 'Add Payment Type',
+            'listPaymentType' => $listPaymentType,
         );
         return View::make('type.index2', $data)
                         ->nest('bootstrap', 'asset.config_common')

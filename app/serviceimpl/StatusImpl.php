@@ -10,11 +10,12 @@
  *
  * @author sahid
  */
-class StatusImpl implements StatusIface{
+class StatusImpl implements StatusIface {
+
     //put your code here
     public function insertStatus() {
         $svcReturn = true;
-        
+
         try {
 
             $data = array(
@@ -27,14 +28,29 @@ class StatusImpl implements StatusIface{
 
             $status = new Status($data);
             $status->save();
-            
         } catch (RuntimeException $exc) {
             $svcReturn = false;
             echo $exc->getTraceAsString();
         }
-        
+
         return $svcReturn;
-    }    
+    }
+
+    public function listAllStatus() {
+        try {
+            $status = new Status();
+            $listArray = $status->getAllStatus();
+            
+            if (count($listArray) > 0):
+                return $listArray;
+            else:
+                throw new Exception("Empty Result Data");
+            endif;
+        } catch (Exception $exc) {
+            echo $exc->getMessage();
+        }
+    }
+
 }
 
 ?>
