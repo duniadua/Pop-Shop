@@ -9,9 +9,13 @@ class UserController extends \BaseController {
      */
     public function index() {
         //
+        $user = new \UserImpl();
+        $listUser = $user->listAllUser();
+        
         $data = array(
             'title' => 'New User',
-            'page_title' => 'User Account'
+            'page_title' => 'User Account',
+            'listUser' => $listUser,
         );
 
         return View::make('account.index2', $data)

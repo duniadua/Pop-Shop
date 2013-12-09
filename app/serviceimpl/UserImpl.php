@@ -36,6 +36,21 @@ class UserImpl implements UserIface {
         return $svcReturn;
     }
 
+    public function listAllUser() {
+        try {
+            $user = new User();
+            $listArray = $user->getAll();
+            
+            if (count($listArray) > 0):
+                return $listArray;
+            else:
+                throw new Exception("Empty Result Data");
+            endif;
+        } catch (Exception $exc) {
+            echo $exc->getMessage();
+        }
+    }
+
 }
 
 ?>

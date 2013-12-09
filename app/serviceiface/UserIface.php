@@ -12,6 +12,7 @@
 interface UserIface {
     //put your code here
     public function insertUser();
+    public function listAllUser();
 }
 
 ?>
