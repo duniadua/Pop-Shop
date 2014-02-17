@@ -12,6 +12,7 @@
 interface StoreIface {
     //put your code here
     public function insertStore($input);
+    public function listAllStore();
 }
 
 ?>

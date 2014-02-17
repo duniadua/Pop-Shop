@@ -9,9 +9,13 @@ class StoreController extends \BaseController {
      */
     public function index() {
         //
+        $store = new StoreImpl();
+        $listStore = $store->listAllStore();
+                
         $data = array(
             'title' => 'POP Shop - Store Setting',
-            'page_title' => 'Add your store name'
+            'page_title' => 'Add your store name',
+            'listStore' => $listStore
         );
         return View::make('store.index2', $data)
                         ->nest('bootstrap', 'asset.config_common')

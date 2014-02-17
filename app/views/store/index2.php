@@ -152,34 +152,40 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
+                                            <th>Store Name</th>
+                                            <th>Address</th>
+                                            <th>City</th>
+                                            <th>Province</th>
+                                            <th>Phone</th>
+                                            <th>Mobile Phone</th>
+                                            <th>E-mail</th>
+                                            <th>Post Code</th>
+                                            <th>Create Date</th>
                                             <th style="width: 26px;"></th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <?php
+//                                        echo var_dump($listCourier);
+                                    $i = 1;
+                                    foreach ($listStore as $rows):
+                                        ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Tompson</td>
-                                            <td>the_mark7</td>
+                                            <td><?php echo $i++; ?></td>
+                                            <td><?php echo $rows->name; ?></td>
+                                            <td><?php echo $rows->address; ?></td>
+                                            <td><?php echo $rows->city; ?></td>
+                                            <td><?php echo $rows->province; ?></td>
+                                            <td><?php echo $rows->home_no; ?></td>
+                                            <td><?php echo $rows->mobile_no; ?></td>
+                                            <td><?php echo $rows->email; ?></td>
+                                            <td><?php echo $rows->postcode; ?></td>
+                                            <td><?php echo date('d-m-Y', strtotime($rows->created_at)); ?></td>
                                             <td>
                                                 <a href="user.html"><i class="icon-pencil"></i></a>
                                                 <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Ashley</td>
-                                            <td>Jacobs</td>
-                                            <td>ash11927</td>
-                                            <td>
-                                                <a href="user.html"><i class="icon-pencil"></i></a>
-                                                <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-                                            </td>
-                                        </tr>        
-                                    </tbody>
+                                    <?php endforeach; ?>
                                 </table>
 
                                 <div class="pagination pagination-centered pagination-mini">

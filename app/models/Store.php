@@ -35,5 +35,12 @@ class Store extends Eloquent {
      */
     protected $table = 'store';
     
+     public function getAll(){
+        $QUERY = DB::table('store')
+                ->get();
+        
+        return $QUERY;
+    }
+    
 }
 

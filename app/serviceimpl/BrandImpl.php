@@ -40,7 +40,7 @@ class BrandImpl implements BrandIface {
             if (count($listarray) > 0):
 
                 foreach ($listarray as $rows) {
-                    $arrayBrand[$rows->name] = $rows->description;
+                    $arrayBrand[$rows->id] = $rows->description;
                 }
 
                 return $arrayBrand;

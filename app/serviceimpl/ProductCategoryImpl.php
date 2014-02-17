@@ -40,7 +40,7 @@ class ProductCategoryImpl implements ProductCategoryIface {
             if (count($listarray) > 0):
 
                 foreach ($listarray as $rows) {
-                    $arrayProduct[$rows->name] = $rows->description;
+                    $arrayProduct[$rows->id] = $rows->description;
                 }
 
                 return $arrayProduct;

@@ -25,4 +25,20 @@ class StoreImpl implements StoreIface {
         return $srvReturn;
     }
 
+    public function listAllStore() {
+        try {
+            $store = new Store();
+            $listArray = $store->getAll();
+
+            if (count($listArray) > 0):
+                return $listArray;
+            else:
+                throw new Exception("Empty Result Data");
+            endif;
+        } catch (Exception $exc) {
+            echo $exc->getMessage();
+        }
+    }
+
 }
+

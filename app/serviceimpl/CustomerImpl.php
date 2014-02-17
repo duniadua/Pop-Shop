@@ -47,6 +47,10 @@ class CustomerImpl implements CustomerIface {
         return $svcReturn;
     }
 
+    public function generateCustomerId() {
+        
+    }
+
 }
 
 ?>

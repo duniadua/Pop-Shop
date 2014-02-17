@@ -134,6 +134,7 @@
                                             <th>Email</th>
                                             <th>Active</th>
                                             <th>Create Date</th>
+                                            <th>Update Date</th>
                                             <th style="width: 26px;"></th>
                                         </tr>
                                     </thead>
@@ -146,8 +147,16 @@
                                             <td><?php echo $i++; ?></td>
                                             <td><?php echo $rows->username; ?></td>
                                             <td><?php echo $rows->email; ?></td>
-                                            <td><?php echo $rows->active; ?></td>
+                                            <td><?php 
+                                            if($rows->active=1):
+                                                echo "Yes";
+                                            else:
+                                                echo 'No';
+                                            endif;
+                                            
+                                            ?></td>
                                             <td><?php echo date('d-m-Y', strtotime($rows->created_at)); ?></td>
+                                            <td><?php echo date('d-m-Y', strtotime($rows->updated_at)); ?></td>
                                             <td>
                                                 <a href="user.html"><i class="icon-pencil"></i></a>
                                                 <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>

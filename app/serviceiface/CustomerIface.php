@@ -12,6 +12,7 @@
 interface CustomerIface {
     //put your code here
     public function insertCustomer();
+    public function generateCustomerId();
 }
 
 ?>
