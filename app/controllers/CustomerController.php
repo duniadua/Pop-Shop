@@ -9,9 +9,13 @@ class CustomerController extends \BaseController {
      */
     public function index() {
         //
+        $customerImpl = new CustomerImpl();
+        $customerImpl = $customerImpl->getAllCustomer();
+        
         $data = array(
             'title' => 'POP Shop - New Customer',
-            'page_title' => 'Add Customer'
+            'page_title' => 'Add Customer',
+            'ListCustomer' => $customerImpl,
         );
         return View::make('customer.index2', $data)
                         ->nest('bootstrap', 'asset.config_common')

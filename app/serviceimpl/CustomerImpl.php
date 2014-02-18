@@ -51,6 +51,19 @@ class CustomerImpl implements CustomerIface {
         
     }
 
+    public function getAllCustomer() {
+        $customer = new Customer();
+        $listCustomer = $customer->getAllCustomer();
+
+        if (count($listCustomer) > 0):
+            return $listCustomer;
+        endif;
+    }
+
+    public function getAllCustomerByGroup() {
+        
+    }
+
 }
 
 ?>

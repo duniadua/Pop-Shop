@@ -44,7 +44,7 @@ class ProductImpl implements ProductIface {
         return $svcReturn;
     }
 
-    public function listProduct() {
+    public function listAllProduct() {
         $product = new Product();
         $listProduct = $product->getAll();
 

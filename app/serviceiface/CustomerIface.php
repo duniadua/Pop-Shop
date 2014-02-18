@@ -13,6 +13,8 @@ interface CustomerIface {
     //put your code here
     public function insertCustomer();
     public function generateCustomerId();
+    public function getAllCustomer();
+    public function getAllCustomerByGroup();
 }
 
 ?>

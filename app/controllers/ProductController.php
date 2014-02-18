@@ -17,6 +17,9 @@ class ProductController extends \BaseController {
 
         $productCategoryImpl = new ProductCategoryImpl();
         $listProductCategory = $productCategoryImpl->listProductCat();
+        
+        $productImpl = new ProductImpl();
+        $listAllProduct = $productImpl->listAllProduct();
 
         $data = array(
             'title' => 'POP Shop - Product',
@@ -24,6 +27,7 @@ class ProductController extends \BaseController {
             'brand' => $listBrandImpl,
             'productCategory' => $listProductCategory,
             'productType' => $listProductType,
+            'listAllProduct' => $listAllProduct,
         );
 
         return View::make('product.index2', $data)

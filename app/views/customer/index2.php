@@ -166,31 +166,38 @@
                                             <th>#</th>
                                             <th>First Name</th>
                                             <th>Last Name</th>
-                                            <th>Username</th>
+                                            <th>E-mail</th>
+                                            <th>Group</th>
                                             <th style="width: 26px;"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Tompson</td>
-                                            <td>the_mark7</td>
-                                            <td>
-                                                <a href="user.html"><i class="icon-pencil"></i></a>
-                                                <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Ashley</td>
-                                            <td>Jacobs</td>
-                                            <td>ash11927</td>
-                                            <td>
-                                                <a href="user.html"><i class="icon-pencil"></i></a>
-                                                <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-                                            </td>
-                                        </tr>        
+                                        <?php
+//                                        echo var_dump($listCourier);
+                                        $i = 1;
+                                        foreach ($ListCustomer as $rows):
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $i++; ?></td>
+                                                <td><?php echo $rows->firstname; ?></td>
+                                                <td><?php echo $rows->lastname; ?></td>
+                                                <td><?php echo $rows->email; ?></td>
+                                                <td><?php
+                                                    if ($rows->grup = 0):
+                                                        echo "Normal User";
+                                                    elseif ($rows->grup = 1):
+                                                        echo "Member";
+                                                    else:
+                                                        echo "Reseler";
+                                                    endif;
+                                                    ?></td>
+                                                <td><?php echo date('d-m-Y', strtotime($rows->created_at)); ?></td>
+                                                <td>
+                                                    <a href="user.html"><i class="icon-pencil"></i></a>
+                                                    <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>       
                                     </tbody>
                                 </table>
 

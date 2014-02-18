@@ -45,5 +45,9 @@ class Customer extends Eloquent {
      * @var array
      */
     protected $hidden = array('password');
+    
+    public function getAllCustomer(){
+        return $courier = DB::table('customer')->get();
+    }
 
 }
