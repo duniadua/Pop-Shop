@@ -36,3 +36,4 @@ Route::resource('category', 'CategoryController');
 Route::resource('product', 'ProductController');
 Route::resource('login', 'LoginController');
 Route::post('login/cekLogin','LoginController@cekLogin');
+Route::get('api2/getcustomerid','API2Controller@getCourier');

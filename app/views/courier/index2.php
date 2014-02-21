@@ -99,6 +99,7 @@
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#home" data-toggle="tab"><?php echo $page_title ?></a></li>
                             <li><a href="#profile" data-toggle="tab">List</a></li>
+                            <li><a href="#search" data-toggle="tab">Search</a></li>
                         </ul>
                         <div id="myTabContent" class="tab-content">
                             <div class="tab-pane active in" id="home">
@@ -138,13 +139,13 @@
                                         <?php
 //                                        echo var_dump($listCourier);
                                         $i = 1;
-                                        foreach($listCourier as $rows):
+                                        foreach ($listCourier as $rows):
                                             ?>
                                             <tr>
                                                 <td><?php echo $i++; ?></td>
                                                 <td><?php echo $rows->name; ?></td>
                                                 <td><?php echo $rows->details; ?></td>
-                                                <td><?php echo date('d-m-Y',  strtotime($rows->created_at)); ?></td>
+                                                <td><?php echo date('d-m-Y', strtotime($rows->created_at)); ?></td>
                                                 <td>
                                                     <a href="user.html"><i class="icon-pencil"></i></a>
                                                     <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
@@ -166,6 +167,22 @@
                                 </div>
 
                             </div>
+                            <div class="tab-pane fade" id="search">
+                                <div class="search-well">
+                                    <div class="form-inline">
+                                        <input class="input-medium" placeholder="Search..." type="text">
+                                        <?php
+                                        $option = array(
+                                            'name' => 'Code',
+                                            'details' => 'Name',
+                                        );
+
+                                        echo Form::select('active', $option);
+                                        ?>
+                                        <button class="btn" type="button"><i class="icon-search"></i> Search</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div> <!--tabcontent-->                        
                     </div>
 
@@ -182,7 +199,7 @@
         </div>
 
 
-<?php echo HTML::script('lib/bootstrap/js/bootstrap.js'); ?>    
+        <?php echo HTML::script('lib/bootstrap/js/bootstrap.js'); ?>    
         <script type="text/javascript">
             $("[rel=tooltip]").tooltip();
             $(function() {
